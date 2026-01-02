@@ -2,7 +2,9 @@ const express = require("express")
 const app = express()
 
 
-
+//db connect
+const {connectDB} = require("./database/dbConfig")
+connectDB()
 
 app.get("/",(req,res)=>{
     res.send("Hello, World!")
