@@ -6,6 +6,13 @@ const app = express()
 const {connectDB} = require("./database/dbConfig")
 connectDB()
 
+//parse json data
+app.use(express.json())
+
+//Routes
+const userRoutes = require("./routes/userRoutes");
+app.use("/", userRoutes)
+
 app.get("/",(req,res)=>{
     res.send("Hello, World!")
 })
